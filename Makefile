@@ -12,10 +12,10 @@ distclean: clean
 	$(RM) $(TARGETS)
 
 dping: dping.c utils.c
-	gcc -W -Wall -O2 -s $(DBUS_INCS) $(DBUS_LIBS) -lrt -o $@ $^ 
+	gcc -W -Wall -O2 -s $(DBUS_INCS) -lrt -o $@ $^ $(DBUS_LIBS)
 
 dpong: dpong.c utils.c
-	gcc -W -Wall -O2 -s $(DBUS_INCS) $(DBUS_LIBS) -lrt -o $@ $^ 
+	gcc -W -Wall -O2 -s $(DBUS_INCS) -lrt -o $@ $^ $(DBUS_LIBS)
 
 install:
 	mkdir -p $(DESTDIR)/usr/bin
